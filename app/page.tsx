@@ -11,8 +11,50 @@ import { Pricing1 } from "@/components/ui/pricing-1";
 import { OrbitingCirclesDemo } from "./bento";
 import { BentoGridDemo } from "@/bento2";
 import { WaitlistForm } from "@/components/ui/waitlist-form-1";
-
 import Pricing from "@/components/ui/pricing-component";
+import { Footerdemo } from "@/components/ui/footer-section";
+import { CTASection } from "@/components/blocks/cta-with-rectangle"
+import { Component } from "@/components/ui/orb";
+
+const Orb = () => {
+  return (
+  
+    <div className="w-screen h-screen bg-black overflow-hidden"> 
+
+      <Component
+        hoverIntensity={0.1}    
+        rotateOnHover={true}
+        hue={240}               
+        forceHoverState={false}
+      />
+    </div>
+  );
+};
+
+function CTADemo() {
+  return (
+    <CTASection
+      badge={{
+        text: "Get started"
+      }}
+      title="Start building with Guardrail"
+      description="Get started with Guardrail and build your security workflow in minutes."
+      action={{
+        text: "Get Started",
+        href: "/docs",
+        variant: "default"
+      }}
+    />
+  )
+}
+
+function Footer() {
+  return (
+    <div className="block">
+      <Footerdemo />
+    </div>
+  );
+}
 
 function DemoOne() {
   return <Pricing />;
@@ -34,6 +76,7 @@ export default function Home() {
       <div className="mx-auto max-w-5xl flex justify-center">
         <Header />
       </div>
+      <Orb />
       <div className="h-screen w-screen flex flex-col justify-center items-center relative">
         <LavaLamp />
         <h1 className="text-6xl md:text-8xl font-bold tracking-tight mix-blend-exclusion text-white whitespace-nowrap">
@@ -43,6 +86,7 @@ export default function Home() {
           Guardrail ensures your GenAI system is predictable, aligned, and compliant — without sacrificing performance.
         </p>
       </div>
+      <CTADemo />
       <div className="flex justify-center items-center mt-10">
         <OrbitingCirclesDemo />
       </div>
@@ -51,6 +95,7 @@ export default function Home() {
       </div>
       <DemoOne />
       <SignIn />
+      <Footer />
     </>
   );
 }
