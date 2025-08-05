@@ -9,6 +9,7 @@ import { CTASection } from "@/components/blocks/cta-with-rectangle"
 import { HeroWithMockup } from "@/components/blocks/hero-with-mockup"
 
 import { Features } from "@/components/blocks/features-8"
+import IntegrationsSection from "@/integration";
 
 export const Demo = () => {
     return <Features />
@@ -36,24 +37,6 @@ export function HeroDemo() {
     />
   )
 }
-
-function CTADemo() {
-  return (
-    <CTASection
-      badge={{
-        text: "Get started"
-      }}
-      title="Start building with Guardrail"
-      description="Get started with Guardrail and build your security workflow in minutes."
-      action={{
-        text: "Get Started",
-        href: "/docs",
-        variant: "default"
-      }}
-    />
-  )
-}
-
 function Footer() {
   return (
     <div className="block">
@@ -73,6 +56,7 @@ export default function Home() {
         <Header />
       </div>
       <HeroDemo />
+      <IntegrationsSection />
       <div className="flex justify-center items-center mt-10">
         <BentoGridDemo />
       </div>
