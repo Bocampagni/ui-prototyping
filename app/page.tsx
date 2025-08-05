@@ -10,6 +10,7 @@ import { HeroWithMockup } from "@/components/blocks/hero-with-mockup"
 
 import { Features } from "@/components/blocks/features-8"
 import IntegrationsSection from "@/integration";
+import GradientHero from "@/hero";
 
 export const Demo = () => {
     return <Features />
@@ -55,7 +56,7 @@ export default function Home() {
       <div className="mx-auto max-w-5xl flex justify-center">
         <Header />
       </div>
-      <HeroDemo />
+      <GradientHero/>
       <IntegrationsSection />
       <div className="flex justify-center items-center mt-10">
         <BentoGridDemo />
