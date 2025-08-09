@@ -4,16 +4,25 @@ import { Header } from "@/components/ui/navbar";
 import { BentoGridDemo } from "@/bento2";
 import Pricing from "@/components/ui/pricing-component";
 import { Footerdemo } from "@/components/ui/footer-section";
-import { CTASection } from "@/components/blocks/cta-with-rectangle"
-
 import { HeroWithMockup } from "@/components/blocks/hero-with-mockup"
-
 import { Features } from "@/components/blocks/features-8"
 import IntegrationsSection from "@/integration";
+import { LoginForm } from '@/components/login-form'
 import GradientHero from "@/hero";
+import Page from "@/dash";
+
+function LoginPage() {
+  return (
+    <div className="bg-muted flex min-h-svh flex-col items-center justify-center p-6 md:p-10">
+      <div className="w-full max-w-sm md:max-w-3xl">
+        <LoginForm />
+      </div>
+    </div>
+  )
+}
 
 export const Demo = () => {
-    return <Features />
+  return <Features />
 }
 
 export function HeroDemo() {
@@ -56,13 +65,15 @@ export default function Home() {
       <div className="mx-auto max-w-5xl flex justify-center">
         <Header />
       </div>
-      <GradientHero/>
+      <GradientHero />
       <IntegrationsSection />
       <div className="flex justify-center items-center mt-10">
         <BentoGridDemo />
       </div>
+      <Page /> {/* Added Page component here */}
       <Demo />
       <DemoOne />
+      <LoginPage />
       <Footer />
     </>
   );
